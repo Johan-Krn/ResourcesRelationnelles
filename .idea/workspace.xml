@@ -5,29 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0aee2481-8c05-483a-b7cf-d34d1142014b" name="Changes" comment="Ajout du README.md">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/navigation/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/account-screen/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/catalog-resource-screen/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/create-resource-screen/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/detail-resource-screen/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/home-screen/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/login-screen/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/register-screen/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/theme/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/shared/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/shared/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/shared/safe-area-wrapper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/login-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/login-screen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/register-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/register-screen/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +58,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Johan-Krn"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d0715d99-afe5-4130-890a-3e12673b1f91" />
+        <option name="url" value="https://github.com/Johan-Krn/ResourcesRelationnelles.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -166,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707235106101</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ajout du README.md">
+      <option name="closed" value="true" />
+      <created>1707295909126</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707295909126</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
