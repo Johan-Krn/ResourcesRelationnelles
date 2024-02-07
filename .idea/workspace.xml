@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aee2481-8c05-483a-b7cf-d34d1142014b" name="Changes" comment="Init projet react native" />
+    <list default="true" id="0aee2481-8c05-483a-b7cf-d34d1142014b" name="Changes" comment="Ajout du README.md">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/shared/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/navigation/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/account-screen/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/catalog-resource-screen/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/create-resource-screen/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/detail-resource-screen/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/home-screen/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/login-screen/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/register-screen/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/theme/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,26 +68,39 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="7739fa507894711f7ab237e3de19269afcd32339" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\tools\php82\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2bzjSs0eRA5KoRiW6CODrvxCsfN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Node.js.start.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -82,6 +119,17 @@
   }
 }]]></component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -148,7 +196,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Init projet react native" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init projet react native" />
+    <MESSAGE value="Ajout du README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout du README.md" />
   </component>
 </project>
