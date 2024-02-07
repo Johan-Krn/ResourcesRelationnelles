@@ -9,7 +9,7 @@ export default function HomeStackNavigator() {
                 name="Home"
                 component={HomeScreen}
                 options={{
-                    title: 'Tableau de bord'
+                    title: 'Tableau de bord',
                 }}
             />
         </Stack.Navigator>
