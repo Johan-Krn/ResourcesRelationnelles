@@ -1,6 +1,6 @@
 import {SafeAreaProvider} from "react-native-safe-area-context";
 import Navigation from "./src/navigation";
-import Toast, {BaseToast} from "react-native-toast-message";
+import Toast, {BaseToast, ErrorToast} from "react-native-toast-message";
 
 export default function App() {
   return (
@@ -37,11 +37,11 @@ export default function App() {
                             height: 100,
                         }}
                         text1Style={{
-                            fontSize: 17,
+                            fontSize: 20,
                             fontWeight: 'bold',
                         }}
                         text2Style={{
-                            fontSize: 15,
+                            fontSize: 17,
                         }}
                         text2NumberOfLines={3}
                     />

@@ -1,22 +1,18 @@
 import React, {useCallback, useRef, useState} from "react";
 import {Text, View, StyleSheet, Image, TouchableOpacity, TouchableHighlight, ScrollView} from "react-native";
+import Toast from 'react-native-toast-message';
 import {useNavigation} from "@react-navigation/native";
 import {Controller, useForm} from "react-hook-form";
+import useUserGlobalStore from '../../store/useUserGlobalStore';
 import Button from "../../components/shared/button"
 import Input from "../../components/shared/input";
 
 export default function LoginScreen() {
     const navigation = useNavigation();
+
     const navigateToRegisterScreen = () => {
         navigation.navigate('Register');
     };
-
-    const { control, handleSubmit, getValues } = useForm({
-        defaultValues: {
-            usr_email: '',
-            usr_password: '',
-        },
-    });
 
     const [errors, setErrors] = useState({
         usr_email: '',
@@ -27,12 +23,69 @@ export default function LoginScreen() {
         setErrors(prevState => ({ ...prevState, [input]: error }));
     };
 
-    const refButtonLogin = useRef(null);
+    const {updateUser} = useUserGlobalStore();
+    const { control, handleSubmit, getValues } = useForm({
+        defaultValues: {
+            usr_email: '',
+            usr_password: '',
+        },
+    });
 
-    // Fonction pour déclencher une action sur le bouton
-    const handleLoginButton = () => {
-        console.log('Le bouton a été pressé');
-    };
+    function validateForm(){
+        let isValid = true;
+
+        if (!getValues('usr_email')) {
+            handleError('Veuillez remplir le champ', 'usr_email');
+            isValid = false;
+        } else if (!getValues('usr_email').match(/\S+@\S+\.\S+/)) {
+            handleError(
+                'Veuillez saisir une adresse e-mail valide',
+                'usr_email',
+            );
+            isValid = false;
+        }
+
+        if (!getValues('usr_password')) {
+            handleError('Veuillez remplir le champ', 'usr_password');
+            isValid = false;
+        } else if (getValues('usr_password').length < 8) {
+            handleError(
+                'La longueur minimale du mot de passe est de 8 caractères',
+                'usr_password',
+            );
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    const onSubmit = async (data) => {
+        loadingButton();
+
+        if(validateForm()){
+            const {usr_email, usr_password} = data;
+
+            stopLoadingButton();
+
+            updateUser({
+                usr_id: 1,
+                usr_first_name: 'Johan',
+                usr_last_name: 'Kerreneur',
+                usr_email: usr_email,
+            });
+        }else{
+            stopLoadingButton();
+
+            Toast.show({
+                type: 'error',
+                text1: 'Erreur',
+                text2: "Veuillez validé le formulaire !",
+            });
+        }
+    }
+
+    // Boutons
+    const refButtonLogin = useRef(null);
 
     const loadingButton = useCallback(() => {
         refButtonLogin?.current?.Action(true);
@@ -121,7 +174,7 @@ export default function LoginScreen() {
                     />
 
                     <View style={styles.formAction}>
-                        <Button ref={refButtonLogin} label="Se connecter" onPress={handleLoginButton}/>
+                        <Button ref={refButtonLogin} label="Se connecter" onPress={handleSubmit(onSubmit)}/>
 
                         <TouchableHighlight {...touchProps}>
                             <View style={styles.franceConnectContainer}>

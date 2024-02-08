@@ -1,5 +1,7 @@
 import React, {useCallback, useRef, useState} from "react";
 import {Text, View, StyleSheet, Image, TouchableOpacity, ScrollView, TouchableHighlight} from "react-native";
+import Toast from 'react-native-toast-message';
+import useUserGlobalStore from '../../store/useUserGlobalStore';
 import {useNavigation} from "@react-navigation/native";
 import {Controller, useForm} from "react-hook-form";
 import Button from "../../components/shared/button"
@@ -10,15 +12,6 @@ export default function RegisterScreen() {
     const navigateToLoginScreen = () => {
         navigation.navigate('Login');
     };
-
-    const { control, handleSubmit, getValues } = useForm({
-        defaultValues: {
-            usr_first_name: '',
-            usr_last_name: '',
-            usr_email: '',
-            usr_password: '',
-        },
-    });
 
     const [errors, setErrors] = useState({
         usr_first_name: '',
@@ -31,12 +24,83 @@ export default function RegisterScreen() {
         setErrors(prevState => ({ ...prevState, [input]: error }));
     };
 
-    const refButtonRegister = useRef(null);
+    const {updateUser} = useUserGlobalStore();
+    const { control, handleSubmit, getValues } = useForm({
+        defaultValues: {
+            usr_first_name: '',
+            usr_last_name: '',
+            usr_email: '',
+            usr_password: '',
+        },
+    });
 
-    // Fonction pour déclencher une action sur le bouton
-    const handleRegisterButton = () => {
-        console.log('Le bouton a été pressé');
-    };
+    function validateForm() {
+        let isValid = true;
+
+        if (!getValues('usr_first_name')) {
+            handleError('Veuillez remplir le champ', 'usr_first_name');
+            isValid = false;
+        }
+
+        if (!getValues('usr_last_name')) {
+            handleError('Veuillez remplir le champ', 'usr_last_name');
+            isValid = false;
+        }
+
+        if (!getValues('usr_username')) {
+            handleError('Veuillez remplir le champ', 'usr_username');
+            isValid = false;
+        }
+
+        if (!getValues('usr_email')) {
+            handleError('Veuillez remplir le champ', 'usr_email');
+            isValid = false;
+        } else if (!getValues('usr_email').match(/\S+@\S+\.\S+/)) {
+            handleError('Veuillez saisir un email valide', 'usr_email');
+            isValid = false;
+        }
+
+        if (!getValues('usr_password')) {
+            handleError('Veuillez remplir le champ', 'usr_password');
+            isValid = false;
+        } else if (getValues('usr_password').length < 8) {
+            handleError(
+                'La longueur minimale du mot de passe est de 8 caractères',
+                'usr_password',
+            );
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    const onSubmit = async (data) => {
+        loadingButton();
+
+        if(validateForm()){
+            const {usr_first_name, usr_last_name, usr_email, usr_password} = data;
+
+            stopLoadingButton();
+
+            updateUser({
+                usr_id: 1,
+                usr_first_name: usr_first_name,
+                usr_last_name: usr_last_name,
+                usr_email: usr_email
+            });
+        }else{
+            stopLoadingButton();
+
+            Toast.show({
+                type: 'error',
+                text1: 'Erreur',
+                text2: "Veuillez validé le formulaire !",
+            });
+        }
+    }
+
+    // Boutons
+    const refButtonRegister = useRef(null);
 
     const loadingButton = useCallback(() => {
         refButtonRegister?.current?.Action(true);
@@ -161,7 +225,7 @@ export default function RegisterScreen() {
                     />
 
                     <View style={styles.formAction}>
-                        <Button ref={refButtonRegister} label="S'inscrire" onPress={handleRegisterButton}/>
+                        <Button ref={refButtonRegister} label="S'inscrire" onPress={handleSubmit(onSubmit)}/>
                     </View>
 
                     <TouchableHighlight {...touchProps}>

@@ -30,7 +30,7 @@ const Input = ({ label, error, password, ...props }) => {
             )}
 
             {error && (
-                <Text mt="3.5" color="rose500">
+                <Text style={{color:'red'}}>
                     {error}
                 </Text>
             )}
