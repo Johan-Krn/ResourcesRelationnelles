@@ -1,3 +1,4 @@
+import { SafeAreaView } from 'react-native'
 import {NavigationContainer} from "@react-navigation/native";
 import useUserGlobalStore from '../store/useUserGlobalStore';
 import AppStackNavigator from "./app-stack-navigator";
@@ -9,7 +10,9 @@ const Navigation = () => {
     if (user) {
         return (
             <NavigationContainer>
-                <AppStackNavigator/>
+                <SafeAreaView style={{flex:1}}>
+                    <AppStackNavigator/>
+                </SafeAreaView>
             </NavigationContainer>
         )
     }else{

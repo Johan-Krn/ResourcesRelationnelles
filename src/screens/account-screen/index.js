@@ -8,7 +8,7 @@ export default function AccountScreen() {
         <View>
             {/*<Text>Compte</Text>*/}
 
-            <TouchableOpacity style={{backgroundColor:'#000', padding: 10, }} onPress={() => {
+            <TouchableOpacity style={{backgroundColor:'#000', padding: 10}} onPress={() => {
                 updateUser(null);
             }}>
                 <Text style={{fontWeight: '700',color: 'white', alignSelf: 'center'}}>Déconnexion</Text>

@@ -53,13 +53,15 @@ export default function CatalogResourceScreen() {
                     </View>
                 </TouchableOpacity>
             ))}
+
+            <View style={{marginBottom: 50}}/>
         </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
     container : {
-        padding: 24
+        padding: 24,
     },
     cardTitle : {
         fontSize: 19,

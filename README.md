@@ -41,10 +41,9 @@ npm start
 yarn start
 ```
 
-Après quelques secondes il y aura un menu pour lancer l'application sur Android ou IOS
+Après quelques secondes, il y aura un menu pour lancer l'application sur Android ou IOS.
 
-Pour Android il faut brancher sont téléphone ou utilisé un emulateur avec Android Studio.
-Pour IOS il faut télécharger l'application Expo Go et scanné le QR Code.
+Pour Android, il faut brancher son téléphone ou utilisé un émulateur avec Android Studio. Pour IOS, il faut télécharger l'application Expo Go et scanné le QR Code.
 
 # Architecture
 

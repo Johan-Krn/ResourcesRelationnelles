@@ -1,131 +1,88 @@
-import {View} from "react-native";
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {useTheme} from "@shopify/restyle";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React, { useEffect, useRef } from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import * as Animatable from 'react-native-animatable';
+import Icon, { Icons } from '../utils/theme/Icons';
+import Colors from '../utils/theme/Colors';
+
 import HomeStackNavigator from "./home-stack-navigator";
 import AccountStackNavigator from "./account-stack-navigator";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 import CatalogResourceStackNavigator from "./catalog-resource-stack-navigator";
 import CreateResourceStackNavigator from "./create-resource-stack-navigator";
 
+const TabArr = [
+    { route: 'HomeStack', label: 'Tableau de bord', type: Icons.Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: HomeStackNavigator },
+    { route: 'CatalogResourceStack', label: 'Catalogue des ressources', type: Icons.Ionicons, activeIcon: 'list-circle', inActiveIcon: 'list-circle-outline', component: CatalogResourceStackNavigator },
+    { route: 'CreateResourceStack', label: 'Ajouter une ressource', type: Icons.MaterialCommunityIcons, activeIcon: 'card-plus', inActiveIcon: 'card-plus-outline', component: CreateResourceStackNavigator },
+    { route: 'AccountStack', label: 'Mon compte', type: Icons.FontAwesome, activeIcon: 'user-circle', inActiveIcon: 'user-circle-o', component: AccountStackNavigator },
+];
+
 const Tab = createBottomTabNavigator();
 
-export default function BottomTabNavigator(){
-    const theme = useTheme();
+const TabButton = (props) => {
+    const { item, onPress, accessibilityState } = props;
+    const focused = accessibilityState.selected;
+    const viewRef = useRef(null);
 
-    return(
+    useEffect(() => {
+        if (focused) {
+            viewRef.current.animate({0: {scale: .5, rotate: '0deg'}, 1: {scale: 1.5, rotate: '360deg'}});
+        } else {
+            viewRef.current.animate({0: {scale: 1.5, rotate: '360deg'}, 1: {scale: 1, rotate: '0deg'}});
+        }
+    }, [focused])
+
+    return (
+        <TouchableOpacity
+            onPress={onPress}
+            activeOpacity={1}
+            style={styles.container}>
+            <Animatable.View
+                ref={viewRef}
+                duration={1000}
+                style={styles.container}>
+                <Icon type={item.type} name={focused ? item.activeIcon : item.inActiveIcon} color={focused ? Colors.primaryDark : Colors.primaryLite} />
+            </Animatable.View>
+        </TouchableOpacity>
+    )
+}
+
+export default function BottomTabNavigator(){
+    return (
         <Tab.Navigator
             screenOptions={{
-                tabBarActiveTintColor: 'black',
-                tabBarInactiveTintColor: theme.colors.gray550,
-                tabBarHideOnKeyboard: true,
+                headerShown: false,
                 tabBarStyle: {
-                    bottom: 0,
-                    right: 0,
-                    left: 0,
-                    elevation: 0,
-                    height: 80,
-                    backgroundColor: '#fff',
-                },
-            }}>
-            <Tab.Screen
-                name="HomeStack"
-                component={HomeStackNavigator}
-                options={() => ({
-                    title: '',
-                    tabBarIcon: ({focused}) => {
-                        return (
-                            <View
-                                style={{
-                                    top: 5,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}>
-                                <FontAwesome
-                                    name="columns"
-                                    size={24}
-                                    color={focused ? '#007bff' : '#111'}
-                                />
-                            </View>
-                        );
-                    },
-                    headerShown: false,
-                })}
-            />
-
-            <Tab.Screen
-                name="CatalogResourceStack"
-                component={CatalogResourceStackNavigator}
-                options={() => ({
-                    title: '',
-                    tabBarIcon: ({focused}) => {
-                        return (
-                            <View
-                                style={{
-                                    top: 5,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}>
-                                <FontAwesome
-                                    name="list"
-                                    size={24}
-                                    color={focused ? '#007bff' : '#111'}
-                                />
-                            </View>
-                        );
-                    },
-                    headerShown: false,
-                })}
-            />
-
-            <Tab.Screen
-                name="CreateResourceStack"
-                component={CreateResourceStackNavigator}
-                options={() => ({
-                    title: '',
-                    tabBarIcon: ({focused}) => {
-                        return (
-                            <View
-                                style={{
-                                    top: 5,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}>
-                                <FontAwesome
-                                    name="plus"
-                                    size={24}
-                                    color={focused ? '#007bff' : '#111'}
-                                />
-                            </View>
-                        );
-                    },
-                    headerShown: false,
-                })}
-            />
-
-            <Tab.Screen
-                name="AccountStack"
-                component={AccountStackNavigator}
-                options={() => ({
-                    title: '',
-                    tabBarIcon: ({focused}) => {
-                        return (
-                            <View
-                                style={{
-                                    top: 5,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}>
-                                <FontAwesome
-                                    name="user"
-                                    size={24}
-                                    color={focused ? '#007bff' : '#111'}
-                                />
-                            </View>
-                        );
-                    },
-                    headerShown: false,
-                })}
-            />
+                    height: 60,
+                    position: 'absolute',
+                    bottom: 16,
+                    right: 16,
+                    left: 16,
+                    borderRadius: 16,
+                }
+            }}
+        >
+            {TabArr.map((item, index) => {
+                return (
+                    <Tab.Screen
+                        key={index}
+                        name={item.route}
+                        component={item.component}
+                        options={{
+                            tabBarShowLabel: false,
+                            tabBarButton: (props) => <TabButton {...props} item={item} />
+                        }}
+                    />
+                )
+            })}
         </Tab.Navigator>
-    );
-};
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+})

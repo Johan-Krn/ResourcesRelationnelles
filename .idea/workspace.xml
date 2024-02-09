@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aee2481-8c05-483a-b7cf-d34d1142014b" name="Changes" comment="Ajout du README.md et création des écrans Login et Register">
-      <change afterPath="$PROJECT_DIR$/src/store/useUserGlobalStore.js" afterDir="false" />
+    <list default="true" id="0aee2481-8c05-483a-b7cf-d34d1142014b" name="Changes" comment="Changement de design pour la barre de navigation">
+      <change afterPath="$PROJECT_DIR$/src/navigation/save_bottom_tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/theme/Colors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/theme/Icons.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/bottom-tab-navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/bottom-tab-navigator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/navigation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/account-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/account-screen/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/login-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/login-screen/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/register-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/register-screen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/catalog-resource-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/catalog-resource-screen/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707304257355</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Vérification de formulaire pour Login et Register">
+      <option name="closed" value="true" />
+      <created>1707405152521</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707405152522</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +221,8 @@
     <MESSAGE value="Init projet react native" />
     <MESSAGE value="Ajout du README.md" />
     <MESSAGE value="Ajout du README.md et création des écrans Login et Register" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du README.md et création des écrans Login et Register" />
+    <MESSAGE value="Vérification de formulaire pour Login et Register" />
+    <MESSAGE value="Changement de design pour la barre de navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement de design pour la barre de navigation" />
   </component>
 </project>
