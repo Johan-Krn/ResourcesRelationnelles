@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0aee2481-8c05-483a-b7cf-d34d1142014b" name="Changes" comment="Changement de design pour la barre de navigation">
-      <change afterPath="$PROJECT_DIR$/src/navigation/save_bottom_tab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/theme/Colors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/theme/Icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/create-resource/Carousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/input.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/navigation/bottom-tab-navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/bottom-tab-navigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/account-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/account-screen/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/catalog-resource-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/catalog-resource-screen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/create-resource-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/create-resource-screen/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707405152522</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changement de design pour la barre de navigation">
+      <option name="closed" value="true" />
+      <created>1707471847780</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707471847780</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

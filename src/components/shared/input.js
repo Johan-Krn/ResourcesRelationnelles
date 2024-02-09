@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
-const Input = ({ label, error, password, ...props }) => {
+const Input = ({ label, error, password, myStyle, ...props }) => {
     const [showPassword, setShowPassword] = useState(password === true ? true : false);
 
     return (
@@ -10,7 +10,7 @@ const Input = ({ label, error, password, ...props }) => {
             <Text style={styles.inputLabel}>{label}</Text>
 
             <TextInput
-                style={[styles.inputControl]}
+                style={[styles.inputControl, myStyle]}
                 {...props}
                 secureTextEntry={showPassword}
             />
