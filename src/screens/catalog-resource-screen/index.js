@@ -1,4 +1,5 @@
 import {FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {useNavigation} from "@react-navigation/native";
 
 const items = [
     {
@@ -18,10 +19,16 @@ const items = [
 ];
 
 export default function CatalogResourceScreen() {
+    const navigation = useNavigation();
+
+    const navigateToDetailResource = () => {
+        navigation.navigate('DetailResource');
+    };
+
     return (
         <ScrollView contentContainerStyle={styles.container}>
             {items.map(({title, description, creator, category, img}, index) => (
-                <TouchableOpacity key={index} onPress={() => {}}>
+                <TouchableOpacity key={index} onPress={navigateToDetailResource}>
                     <View style={styles.card}>
                         <View style={styles.cardTop}>
                             <Image

@@ -25,7 +25,14 @@ export default function CreateResourceScreen() {
         setErrors(prevState => ({ ...prevState, [input]: error }));
     };
 
-    const [selected, setSelected] = React.useState("");
+    const [typeSelected, setTypeSelected] = React.useState("");
+    const [categorieSelected, setCategorieSelected] = React.useState("");
+
+    const types = [
+        {key:'1', value:'Photo'},
+        {key:'2', value:'Vidéo'},
+        {key:'3', value:'Audio'},
+    ];
 
     const data = [
         {key:'1', value:'Mobiles', disabled:true},
@@ -176,15 +183,21 @@ export default function CreateResourceScreen() {
                     name="rsc_content"
                 />
 
-                {/*<SelectList*/}
-                {/*    setSelected={(val) => setSelected(val)}*/}
-                {/*    data={data}*/}
-                {/*    save="value"*/}
-                {/*/>*/}
+                <SelectList
+                    boxStyles={{marginBottom: 15}}
+                    setSelected={(val) => setTypeSelected(val)}
+                    data={types}
+                    save="value"
+                    placeholder="Type de ressource"
+                />
 
-                {/*{images && images.map((image, index) => (*/}
-                {/*    <Image key={index} source={{ uri: image }} style={{ width: 200, height: 200 }} />*/}
-                {/*))}*/}
+                <SelectList
+                    boxStyles={{marginBottom: 15}}
+                    setSelected={(val) => setCategorieSelected(val)}
+                    data={data}
+                    save="value"
+                    placeholder="Choisir une catégorie"
+                />
 
                 <TouchableOpacity
                     style={{

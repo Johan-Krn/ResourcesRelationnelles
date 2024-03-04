@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: '300',
         color: '#222',
-        borderColor: '#000',
-        borderWidth: 2,
+        borderColor: '#808080',
+        borderWidth: 1,
     },
     btnEye: {
         backgroundColor: '#fff',

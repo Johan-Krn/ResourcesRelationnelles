@@ -9,12 +9,13 @@ import HomeStackNavigator from "./home-stack-navigator";
 import AccountStackNavigator from "./account-stack-navigator";
 import CatalogResourceStackNavigator from "./catalog-resource-stack-navigator";
 import CreateResourceStackNavigator from "./create-resource-stack-navigator";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const TabArr = [
-    { route: 'HomeStack', label: 'Tableau de bord', type: Icons.Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: HomeStackNavigator },
-    { route: 'CatalogResourceStack', label: 'Catalogue des ressources', type: Icons.Ionicons, activeIcon: 'list-circle', inActiveIcon: 'list-circle-outline', component: CatalogResourceStackNavigator },
+    { route: 'HomeStack', label: 'Tableau de bord', type: Icons.Ionicons, activeIcon: 'view-dashboard', inActiveIcon: 'grid-outline', component: HomeStackNavigator },
+    { route: 'CatalogResourceStack', label: 'Catalogue des ressources', type: Icons.Ionicons, activeIcon: 'format-list-bulleted', inActiveIcon: 'list-circle-outline', component: CatalogResourceStackNavigator },
     { route: 'CreateResourceStack', label: 'Ajouter une ressource', type: Icons.MaterialCommunityIcons, activeIcon: 'card-plus', inActiveIcon: 'card-plus-outline', component: CreateResourceStackNavigator },
-    { route: 'AccountStack', label: 'Mon compte', type: Icons.FontAwesome, activeIcon: 'user-circle', inActiveIcon: 'user-circle-o', component: AccountStackNavigator },
+    { route: 'AccountStack', label: 'Mon compte', type: Icons.FontAwesome, activeIcon: 'account', inActiveIcon: 'user-circle-o', component: AccountStackNavigator },
 ];
 
 const Tab = createBottomTabNavigator();
@@ -28,7 +29,7 @@ const TabButton = (props) => {
         if (focused) {
             viewRef.current.animate({0: {scale: .5, rotate: '0deg'}, 1: {scale: 1.5, rotate: '360deg'}});
         } else {
-            viewRef.current.animate({0: {scale: 1.5, rotate: '360deg'}, 1: {scale: 1, rotate: '0deg'}});
+            viewRef.current.animate({0: {scale: 1, rotate: '360deg'}, 1: {scale: 1, rotate: '0deg'}});
         }
     }, [focused])
 
@@ -40,8 +41,8 @@ const TabButton = (props) => {
             <Animatable.View
                 ref={viewRef}
                 duration={1000}
-                style={styles.container}>
-                <Icon type={item.type} name={focused ? item.activeIcon : item.inActiveIcon} color={focused ? Colors.primaryDark : Colors.primaryLite} />
+                style={styles.buttonIcon}>
+                <MaterialCommunityIcons name={focused ? item.activeIcon : item.inActiveIcon} size={25} color={focused ? Colors.primaryDark : Colors.primaryLite} />
             </Animatable.View>
         </TouchableOpacity>
     )
@@ -51,6 +52,7 @@ export default function BottomTabNavigator(){
     return (
         <Tab.Navigator
             screenOptions={{
+                tabBarActiveTintColor: '#2780e3',
                 headerShown: false,
                 tabBarStyle: {
                     height: 60,
@@ -70,7 +72,12 @@ export default function BottomTabNavigator(){
                         component={item.component}
                         options={{
                             tabBarShowLabel: false,
-                            tabBarButton: (props) => <TabButton {...props} item={item} />
+                            tabBarIcon: ({ color, size }) => (
+                                <View style={styles.buttonIcon}>
+                                    <MaterialCommunityIcons name={item.activeIcon} color={color} size={size} />
+                                </View>
+                            ),
+                            //tabBarButton: (props) => <TabButton {...props} item={item} />
                         }}
                     />
                 )
@@ -84,6 +91,14 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor:'red'
+    },
+    buttonIcon: {
+        borderColor: '#000',
+        borderWidth: 2,
+        height: 50,
+        width: 50,
+        borderRadius: 50,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 })

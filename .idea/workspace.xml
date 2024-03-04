@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0aee2481-8c05-483a-b7cf-d34d1142014b" name="Changes" comment="Changement de design pour la barre de navigation">
-      <change afterPath="$PROJECT_DIR$/src/components/create-resource/Carousel.js" afterDir="false" />
+    <list default="true" id="0aee2481-8c05-483a-b7cf-d34d1142014b" name="Changes" comment="MAJ de la barre de navigation et intégration d'un carousel pour les photos pour la création d'un ressource">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/create-resource/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create-resource/Carousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/input.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/navigation/bottom-tab-navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/bottom-tab-navigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/account-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/account-screen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/catalog-resource-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/catalog-resource-screen/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/create-resource-screen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/create-resource-screen/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +107,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/wamp/www/Projets-Johan/Lab/ReactNative/ResourcesRelationnelles&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/Projets-Johan/react/NextJS/Githread&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -119,18 +119,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -142,6 +139,13 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.16-jbr_dcevm-11.0.16-4caba194b151-788636e5" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -152,6 +156,10 @@
       <updated>1707224807713</updated>
       <workItem from="1707224809791" duration="10303000" />
       <workItem from="1707309395505" duration="12411000" />
+      <workItem from="1709538352016" duration="627000" />
+      <workItem from="1709539110859" duration="122000" />
+      <workItem from="1709539269587" duration="114000" />
+      <workItem from="1709539417375" duration="11026000" />
     </task>
     <task id="LOCAL-00001" summary="Init projet react native">
       <option name="closed" value="true" />
@@ -193,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707471847780</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Création d'une ressource">
+      <option name="closed" value="true" />
+      <created>1707494274406</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707494274406</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +245,8 @@
     <MESSAGE value="Ajout du README.md et création des écrans Login et Register" />
     <MESSAGE value="Vérification de formulaire pour Login et Register" />
     <MESSAGE value="Changement de design pour la barre de navigation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changement de design pour la barre de navigation" />
+    <MESSAGE value="Création d'une ressource" />
+    <MESSAGE value="MAJ de la barre de navigation et intégration d'un carousel pour les photos pour la création d'un ressource" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ de la barre de navigation et intégration d'un carousel pour les photos pour la création d'un ressource" />
   </component>
 </project>
