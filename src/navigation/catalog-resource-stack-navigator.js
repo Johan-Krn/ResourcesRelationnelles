@@ -11,7 +11,8 @@ export default function CatalogResourceStackNavigator(){
                 name="CatalogResource"
                 component={CatalogResourceScreen}
                 options={{
-                    title: 'Catalogue des ressources'
+                    title: 'Catalogue des ressources',
+                    headerShown: false,
                 }}
             />
 
@@ -19,7 +20,8 @@ export default function CatalogResourceStackNavigator(){
                 name="DetailResource"
                 component={DetailResourceScreen}
                 options={{
-                    title: 'Détail de la ressource'
+                    title: 'Détail de la ressource',
+                    headerShown: false
                 }}
             />
         </Stack.Navigator>

@@ -10,7 +10,8 @@ export default function CreateResourceStackNavigator(){
                 name="CreateResource"
                 component={CreateResourceScreen}
                 options={{
-                    title: "Création d'une ressource"
+                    title: "Création d'une ressource",
+                    headerShown: false,
                 }}
             />
         </Stack.Navigator>

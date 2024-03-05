@@ -9,7 +9,8 @@ export default function AccountStackNavigator() {
                 name="Account"
                 component={AccountScreen}
                 options={{
-                    title: 'Mon compte'
+                    title: 'Mon compte',
+                    headerShown: false,
                 }}
             />
         </Stack.Navigator>

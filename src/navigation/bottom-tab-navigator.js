@@ -52,7 +52,8 @@ export default function BottomTabNavigator(){
     return (
         <Tab.Navigator
             screenOptions={{
-                tabBarActiveTintColor: '#2780e3',
+                tabBarActiveTintColor: '#EEEEF0',
+                tabBarInactiveTintColor: '#FFF',
                 headerShown: false,
                 tabBarStyle: {
                     height: 60,
@@ -61,6 +62,8 @@ export default function BottomTabNavigator(){
                     right: 16,
                     left: 16,
                     borderRadius: 16,
+                    borderColor: '#000',
+                    borderWidth: 0,
                 }
             }}
         >
@@ -72,6 +75,7 @@ export default function BottomTabNavigator(){
                         component={item.component}
                         options={{
                             tabBarShowLabel: false,
+                            headerShown: false,
                             tabBarIcon: ({ color, size }) => (
                                 <View style={styles.buttonIcon}>
                                     <MaterialCommunityIcons name={item.activeIcon} color={color} size={size} />
@@ -93,10 +97,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonIcon: {
-        borderColor: '#000',
-        borderWidth: 2,
-        height: 50,
-        width: 50,
+        backgroundColor: '#0090FF',
+        borderColor: '#808080',
+        borderWidth: 0,
+        height: 40,
+        width: 40,
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center'

@@ -10,6 +10,7 @@ export default function HomeStackNavigator() {
                 component={HomeScreen}
                 options={{
                     title: 'Tableau de bord',
+                    headerShown: false,
                 }}
             />
         </Stack.Navigator>
